@@ -1,0 +1,25 @@
+[How to run]
+
+* Read BMP and writ BMP
+  $ make -f Makefile.main_bmp
+  $ ./bmp_extractor -i images/lenna_320x240.bmp -o a.bmp
+
+* Extract color components from BMP
+  $ make -f Makefile.main_bmp
+  $ ./bmp_extractor -i images/lenna_320x240.bmp -r r.raw -g g.raw -b b.raw -y luma.raw
+
+* Make a BMP from luma
+  $ make -f Makefile.main_gray
+  $ ./bmp_gray -w 320 -t 240 -y luma.raw -o x.bmp
+
+[Files]
+src/bmp_handle.c
+src/bmp_handle.h
+
+src/main_bmp.c          BMP handling to extract components
+    bmp_handle.c
+    bmp_handle.h
+
+src/main_gray.c         Raw to BMP file
+    bmp_handle.c
+    bmp_handle.h

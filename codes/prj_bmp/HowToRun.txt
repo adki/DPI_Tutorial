@@ -1,0 +1,8 @@
+
+1. Go to 'xsim' and run 'make'
+   $ cd xsim
+   $ make
+
+2. Preview the result
+   $ cd xsim
+   $ display result.bmp

@@ -1,0 +1,2 @@
+
+1. Go to 'xsim' and run 'make'

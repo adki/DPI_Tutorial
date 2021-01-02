@@ -1,0 +1,3 @@
+
+* Run 'make cleanup' to remove unnecessary files.
+* Refer to 'HowToRun.txt' in each project.

@@ -1,0 +1,5 @@
+
+1. Go to 'xsim' and run 'make'
+   $ cd xsim
+   $ make cleanupall
+   $ make

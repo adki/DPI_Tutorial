@@ -1,0 +1,73 @@
+#-------------------------------------------------------------
+SHELL		= /bin/sh
+
+#-------------------------------------------------------------
+TARGET	= bmp_extractor
+SRC	= main_bmp.c\
+	bmp_handle.c
+
+OBJS	= $(SRC:.c=.o)
+
+#-------------------------------------------------------------
+ARCH		= $(shell uname)
+MACH    = $(shell uname -m)
+ifeq ($(findstring CYGWIN_NT,$(ARCH)),CYGWIN_NT)
+	SRC		+= 
+else ifeq ($(findstring MINGW32_NT,$(ARCH)),MINGW32_NT)
+	SRC		+= 
+else ifeq ($(ARCH), Linux)
+	LIBS		= 
+else
+	LIBS		= 
+endif
+
+#-------------------------------------------------------------
+CC		= gcc
+INCDIRS		= -Isrc
+DEFS		= -DDEBUG
+OPT		= -g #-O3 # -O3 -g
+CCFLAGS		= $(DEFS) $(OPT)
+
+#-------------------------------------------------------------
+H_DIR		= src
+C_DIR		= src
+vpath %.h	$(H_DIR)
+vpath %.c	$(C_DIR)
+
+#-------------------------------------------------------------
+ifndef OBJECTDIR
+  OBJECTDIR = obj
+endif
+ifeq (${wildcard $(OBJECTDIR)},)
+  DUMMY := ${shell mkdir $(OBJECTDIR)}
+endif
+
+#-------------------------------------------------------------
+$(OBJECTDIR)/%.o: %.c
+	$(CC) -c $(CCFLAGS) $(INCDIRS) -o $@ $<
+
+#-------------------------------------------------------------
+all: $(TARGET)
+
+$(TARGET): $(addprefix $(OBJECTDIR)/, $(OBJS))
+	$(CC) -o $(TARGET) $^ $(LIBS)
+
+#-------------------------------------------------------------
+IMG=images/face_320x240.bmp
+#IMG=images/face_640x480.bmp
+#IMG=images/tv_640x480.bmp
+run: $(TARGET)
+	./$(TARGET) -v -i $(IMG) -o result.bmp -r red.raw -g green.raw -b blue.raw -y luma.raw
+
+#-------------------------------------------------------------
+clean:
+	-rm -fr $(OBJECTDIR)
+	-rm -fr ./Debug
+	-rm -f *.stackdump
+
+cleanup: clean
+	-rm -f $(TARGET) $(TARGET).exe
+	-rm -f *.raw
+
+clobber: cleanup
+#*****************************************************************************

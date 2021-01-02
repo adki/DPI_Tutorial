@@ -1,0 +1,15 @@
+01_simple_sv2c/               SystemVerilog calls C function that has no return value.
+02_simple_sv2c_return/        SystemVerilog calls C function that has return value.
+03_simple_sv2c_array_input/   SystemVerilog calls C function that has array argument (to C).
+04_simple_sv2c_array_output/  SystemVerilog calls C function that has array argument (from C).
+05_simple_sv2c_struct_input/  SystemVerilog calls C function that has struct argument (to C).
+06_simple_sv2c_struct_output/ SystemVerilog calls C function that has struct argument (from C).
+
+50_simple_c2sv_function/      C calls SystemVerilog function
+51_simple_c2sv_task/          C calls SystemVerilog task (not yet)
+
+prj_bmp/        SystemVerilog calls routines to handle BMP file
+                - Read BMP, inverts all pixel values, and then write BMP.
+prj_png/        SystemVerilog calls routines to handle PNG file
+                - Read PNG, inverts all pixel values, and then write PNG.
+prj_bmp_edge/   (not yet)
