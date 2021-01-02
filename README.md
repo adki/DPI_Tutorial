@@ -37,6 +37,7 @@ This example uses Xilinx Vivado simulator, i.e., xsim.
 * **prj_bmp**<br>
 SystemVerilog calls routines to handle BMP file and it uses
 <a href="https://github.com/adki/BmpHandle" target="_blank">BMP handle C library</a>.
+
 | ![BMP handle project](slides/images/prj_bmp.png) |
 |:---:|
 | *BMP handle project* |
@@ -44,6 +45,7 @@ SystemVerilog calls routines to handle BMP file and it uses
 * **prj_png**<br>
 SystemVerilog calls routines to handle PNG file and it uses
 <a href="https://stb.handmade.network" target="_blank">single-file header-file libraries for C/C++</a>.
+
 | ![PNG handle project](slides/images/prj_png.png) |
 |:---:|
 | *PNG handle project* |
