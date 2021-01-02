@@ -44,7 +44,7 @@ SystemVerilog calls routines to handle BMP file and it uses
 
 * **prj_png**<br>
 SystemVerilog calls routines to handle PNG file and it uses
-<a href="https://stb.handmade.network" target="_blank">single-file header-file libraries for C/C++</a>.
+<a href="https://stb.handmade.network" target="_blank">STB (single-file header-file) libraries for C/C++</a>.
 
 | ![PNG handle project](slides/images/prj_png.png) |
 |:---:|
